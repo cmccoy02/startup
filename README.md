@@ -5,7 +5,7 @@ Startup Project
 Introducing 'One of None' - the revolutionary clothing brand powered by AI creativity. Tired of wearing the same old mass-produced t-shirts? With 'One of None,' you become the designer. Simply input your unique prompt, and watch as our AI generates a one-of-a-kind, jaw-dropping design personalized just for you. Say goodbye to cookie-cutter fashion and hello to creativity unleashed. 'One of None' - where every shirt tells your story, one AI-inspired masterpiece at a time.
 
 ## Design
-![[IMG_C6C121B13571-1.jpeg]]
+![IMG_C6C121B13571-1.jpeg]
 ## Key Features
 - Secure login over HTTPS
 - Ability for a user to prompt their own design using Gradio
