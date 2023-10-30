@@ -1,0 +1,85 @@
+
+body {
+    font-family: Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f2f2f2cb;
+}
+
+header {
+    font-family: Helvetica, sans-serif;
+    text-align: center;
+    background-color: #194566;
+    color: white;
+    padding: 10px 0;
+}
+
+footer
+{
+    text-align: left;
+    background-color: #194566;
+    color: white;
+    padding: 10px 0;
+}
+
+main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Login Page Styles */
+#loginForm {
+    text-align: center;
+}
+
+#loginForm label, #loginForm input, #loginForm button {
+    display: block;
+    margin: 10px auto;
+}
+
+#loginForm button {
+    background-color: #d48300;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Home Page Styles */
+#design-prompt {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#design-prompt h2 {
+    color: #d47800;
+    background-color: rgba(217, 217, 212, 0.898);
+}
+
+.design-box {
+    border: 2px dashed #0078d4;
+    padding: 30px;
+    margin: 20px 0;
+    border-radius: 8px;
+    min-height: 150px;
+    text-align: left;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+#clear-button, #submit-button {
+    background-color: #d44300;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
