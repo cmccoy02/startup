@@ -12,6 +12,7 @@ header {
     background-color: #194566;
     color: white;
     padding: 10px 0;
+    
 }
 
 footer
@@ -21,6 +22,7 @@ footer
     background-color: #194566;
     color: white;
     padding: 10px 0;
+    justify-content: space-between;
 }
 
 main {
@@ -56,6 +58,21 @@ a
 {
     text-decoration: none;
     color: #d48300;
+    
+}
+
+#logo 
+{
+    display: flex;
+    justify-content: left; 
+    margin: 20px 0;
+    width: 100px;
+    vertical-align: bottom;
+}
+
+#login_home
+{
+  margin: 20px ;  
 }
 #design-prompt {
     text-align: center;
