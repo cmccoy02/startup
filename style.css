@@ -1,110 +1,61 @@
+/* style.css */
 
 body {
-    font-family: Helvetica, sans-serif;
+    font-family: Arial, sans-serif; /* You can choose a different font if you like */
+    color: #333; /* Dark grey text color */
+    background-color: #fff; /* White background */
     margin: 0;
     padding: 0;
-    background-color: #f2f2f2cb;
 }
 
 header {
-    font-family: Helvetica, sans-serif;
-    text-align: center;
-    background-color: #194566;
-    color: white;
+    background-color: #f8f8f8; /* Light grey background for the header */
     padding: 10px 0;
-    
+    border-bottom: 2px solid orange; /* Orange accent */
 }
 
-footer
-{
-    display: flex;
-    text-align: left;
-    background-color: #194566;
-    color: white;
-    padding: 10px 0;
-    justify-content: space-between;
+header a {
+    color: #333; /* Dark grey color for links */
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+header ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+header li {
+    display: inline;
+}
+
+#logo {
+    position: absolute;
+    top: 10px;
+    left: 10px;
 }
 
 main {
-    max-width: 800px;
-    margin: 0 auto;
     padding: 20px;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Center aligning the main content */
 }
 
-/* Login Page Styles */
-#loginForm {
+footer {
+    background-color: #f8f8f8; /* Light grey background for the footer */
+    color: #333;
     text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
 
-#loginForm label, #loginForm input, #loginForm button {
-    display: block;
-    margin: 10px auto;
-}
-
-#loginForm button {
-    background-color: #d48300;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-/* Home Page Styles */
-a
-{
+footer a {
+    color: orange; /* Orange color for the footer link */
     text-decoration: none;
-    color: #d48300;
-    
 }
 
-#logo 
-{
-    display: flex;
-    justify-content: left; 
-    margin: 20px 0;
-    width: 100px;
-    vertical-align: bottom;
-}
-
-#login_home
-{
-  margin: 20px ;  
-}
-#design-prompt {
-    text-align: center;
-    margin-top: 20px;
-}
-
-#design-prompt h2 {
-    color: #d47800;
-    background-color: rgba(217, 217, 212, 0.898);
-}
-
-.design-box {
-    display : flex;
-    border: 2px dashed #0078d4;
-    padding: 20px;
-    margin: 20px 0;
-    border-radius: 8px;
-    min-height: 175px;
-    text-align: left;
-}
-
-.buttons {
-    display: flex;
-    justify-content:left;
-    
-}
-
- #submit-button , #clear-button {
-    background-color: #d44300;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 10px;
-    cursor: pointer;
+footer p {
+    margin: 0;
 }
