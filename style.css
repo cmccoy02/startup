@@ -1,21 +1,22 @@
 /* style.css */
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap');
 
 body {
-    font-family: Arial, sans-serif; /* You can choose a different font if you like */
-    color: #333; /* Dark grey text color */
-    background-color: #fff; /* White background */
+    font-family: 'Space Mono', monospace; 
+    color: #333; 
+    background-color: #fff; 
     margin: 0;
     padding: 0;
 }
 
 header {
-    background-color: #f8f8f8; /* Light grey background for the header */
+    background-color: #f8f8f8; 
     padding: 10px 0;
-    border-bottom: 2px solid orange; /* Orange accent */
+    border-bottom: 2px solid orange; 
 }
 
 header a {
-    color: #333; /* Dark grey color for links */
+    color: #333; 
     text-decoration: none;
     margin: 0 10px;
 }
@@ -38,11 +39,11 @@ header li {
 
 main {
     padding: 20px;
-    text-align: center; /* Center aligning the main content */
+    text-align: center; 
 }
 
 footer {
-    background-color: #f8f8f8; /* Light grey background for the footer */
+    background-color: #f8f8f8; 
     color: #333;
     text-align: center;
     padding: 10px 0;
@@ -52,7 +53,7 @@ footer {
 }
 
 footer a {
-    color: orange; /* Orange color for the footer link */
+    color: orange; 
     text-decoration: none;
 }
 
