@@ -1,0 +1,25 @@
+{
+  "name": "startup",
+  "version": "1.0.0",
+  "description": "one-of-none startup project",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cmccoy02/startup.git#main"
+  },
+  "keywords": [
+    "oneofnone"
+  ],
+  "author": "Connor",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cmccoy02/startup/issues"
+  },
+  "homepage": "https://github.com/cmccoy02/startup/tree/main#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
