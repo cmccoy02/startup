@@ -136,3 +136,91 @@
 
 ## 34. Output of Promises
 - Promises in JavaScript are used for handling asynchronous operations. The output of a promise depends on whether it is resolved or rejected. The output is typically the result of the operation when resolved or an error when rejected.
+
+
+
+## Networking
+
+1. **Port Usage:**
+   - HTTP: 80
+   - HTTPS: 443
+   - SSH: 22
+
+2. **HTTP Status Codes:**
+   - 300 Range: Redirection
+   - 400 Range: Client errors
+   - 500 Range: Server errors
+
+3. **HTTP Header `Content-Type`:**
+   - Specifies the media type of the resource.
+
+4. **Cookie Attributes:**
+   - `Domain`: Specifies the domain for which the cookie is valid.
+   - `Path`: Specifies the URL path for which the cookie is valid.
+   - `SameSite`: Controls when cookies are sent with cross-site requests.
+   - `HTTPOnly`: Restricts the cookie from being accessed by client-side scripts.
+
+## Express.js
+
+5. **Middleware Output:**
+   - For an HTTP GET request with a URL path of `/foo/bar`:
+     ```javascript
+     console.log('/foo/bar');
+     ```
+
+6. **MongoDB Query:**
+   - `{ cost: { $gt: 10 }, name: /fran.*/ }`
+   - Selects all documents where cost is greater than 10 and name matches the regex `/fran.*/`.
+
+7. **Password Storage:**
+   - Use hash functions (e.g., bcrypt) to securely store hashed passwords.
+
+## Node.js and Websockets
+
+8. **Websockets Console Output:**
+   - Depends on the actual code; typically, it logs WebSocket-related information.
+
+9. **WebSocket Protocol:**
+   - Used for real-time communication between a client and a server.
+
+## React
+
+10. **JSX and Curly Braces:**
+    - JSX allows embedding expressions in curly braces `{}`.
+
+11. **React Component Output:**
+    - Given the provided React component structure, it generates a list of welcome messages.
+
+12. **Numbers React Component Output:**
+    - Generates an unordered list (`ul`) containing list items (`li`) with numbers 1 to 5.
+
+13. **React State and useState:**
+    - Declares a state variable `count` and a function `setCount` to update it. Renders a paragraph and a button, updating the count on button click.
+
+14. **React Hooks:**
+    - Used for adding state and lifecycle features to functional components.
+
+15. **`useEffect` Hook:**
+    - Used for side effects in functional components, like data fetching, subscriptions, etc.
+
+16. **React Routing with `react-router-dom`:**
+    - Configures routes using `BrowserRouter` and `Routes`, rendering different components based on the path.
+
+## npm and Package.json
+
+17. **npm in Web Development:**
+    - npm (Node Package Manager) is used to manage and install packages (dependencies) in a project.
+
+18. **package.json:**
+    - Configuration file that holds metadata and dependencies information for a npm project.
+
+## Miscellaneous
+
+19. **Fetch Function:**
+    - Used to make network requests, similar to XMLHttpRequest.
+
+20. **Node.js:**
+    - JavaScript runtime for executing server-side code.
+
+21. **Vite:**
+    - A build tool for modern web development, focused on speed and simplicity.
