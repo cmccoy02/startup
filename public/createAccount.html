@@ -26,10 +26,10 @@
 
     <main>
         <h2>Create Your Account</h2>
-        <form action="submitAccountCreation.html" method="post">
+        <form id="createAccountForm">
             <div>
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
             </div>
             <div>
                 <label for="password">Password:</label>
@@ -49,6 +49,37 @@
         <p>One of None 2023</p>
         <p><a href="https://github.com/cmccoy02/startup">GitHub</a></p>
     </footer>
-<script src="app.js"></script>
+    <script>
+        document.getElementById('createAccountForm').addEventListener('submit', async function(event) {
+            event.preventDefault();
+    
+            const formData = new FormData(this);
+            const username = formData.get('username');
+            const password = formData.get('password');
+            const confirmPassword = formData.get('confirm-password');
+    
+            if (password !== confirmPassword) {
+                alert('Passwords do not match');
+                return;
+            }
+    
+            const data = { username, password };
+    
+            const response = await fetch('/register', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data)
+            });
+    
+            if (response.ok) {
+                alert('Account created successfully');
+                window.location.href = 'login.html';
+            } else {
+                alert('Failed to create account');
+            }
+        });
+    </script>
 </body>
 </html>

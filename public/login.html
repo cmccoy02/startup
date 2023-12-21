@@ -24,10 +24,10 @@
 
     <main>
         <h2>Login to Your Account</h2>
-        <form action="submitLogin.html" method="post">
+        <form id="loginForm">
             <div>
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
             </div>
             <div>
                 <label for="password">Password:</label>
@@ -44,6 +44,33 @@
         <p>One of None 2023 - Connor McCoy</p>
         <p><a href="https://github.com/cmccoy02/startup">GitHub</a></p>
     </footer>
-<script src="app.js"></script>
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', async function(event) {
+            event.preventDefault();
+    
+            const formData = new FormData(this);
+            const data = {
+                username: formData.get('username'),
+                password: formData.get('password')
+            };
+    
+            const response = await fetch('/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data)
+            });
+    
+            if (response.ok) {
+                // Handle successful login
+                alert('Login successful');
+                window.location.href = 'index.html';
+            } else {
+                // Handle login errors
+                alert('Login failed');
+            }
+        });
+    </script>
 </body>
 </html>

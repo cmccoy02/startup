@@ -1,5 +1,6 @@
 const { MongoClient } = require('mongodb');
-const config = require('./dbConfig.json'); // Adjust the path if necessary
+const bcrypt = require('bcrypt');
+const config = require('./dbConfig.json'); // Make sure this path is correct
 
 const uri = `mongodb+srv://${config.userName}:${config.password}@${config.hostname}`;
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
@@ -24,28 +25,18 @@ function getDB() {
     return db;
 }
 
-async function addDocument(collectionName, document) {
-    const collection = db.collection(collectionName);
-    const result = await collection.insertOne(document);
+// Add a new user
+async function addUser(username, password) {
+    const collection = db.collection('users');
+    const hashedPassword = await bcrypt.hash(password, 10);
+    const result = await collection.insertOne({ username, password: hashedPassword });
     return result.insertedId;
 }
 
-async function findDocuments(collectionName, query, options = {}) {
-    const collection = db.collection(collectionName);
-    const documents = await collection.find(query, options).toArray();
-    return documents;
+// Find a user by username
+async function findUser(username) {
+    const collection = db.collection('users');
+    return await collection.findOne({ username });
 }
 
-async function updateDocument(collectionName, query, update) {
-    const collection = db.collection(collectionName);
-    const result = await collection.updateOne(query, { $set: update });
-    return result.modifiedCount;
-}
-
-async function deleteDocument(collectionName, query) {
-    const collection = db.collection(collectionName);
-    const result = await collection.deleteOne(query);
-    return result.deletedCount;
-}
-
-module.exports = { connectDB, getDB, addDocument, findDocuments, updateDocument, deleteDocument };
+module.exports = { connectDB, getDB, addUser, findUser };
