@@ -1,5 +1,6 @@
 {
     "hostname": "cluster23.anmf1aw.mongodb.net",
     "userName": "novaconnor17",
-    "password": "QCWGHkZDD2Loxe79"
+    "password": "QCWGHkZDD2Loxe79" ,
+    "dbName": "cluster23"
   }

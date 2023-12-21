@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/cmccoy02/startup/tree/main#readme",
   "dependencies": {
+    "bcrypt": "^5.1.1",
     "express": "^4.18.2",
     "mongodb": "^6.3.0",
     "node-fetch": "^2.7.0"
