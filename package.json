@@ -21,6 +21,7 @@
   "homepage": "https://github.com/cmccoy02/startup/tree/main#readme",
   "dependencies": {
     "express": "^4.18.2",
-    "mongodb": "^6.3.0"
+    "mongodb": "^6.3.0",
+    "node-fetch": "^3.3.2"
   }
 }

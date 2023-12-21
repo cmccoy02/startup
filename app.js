@@ -49,5 +49,18 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+    async function fetchUserTokens() {
+        try {
+            const response = await fetch('/api/user-tokens');
+            const data = await response.json();
+            document.getElementById('token-count').textContent = data.tokens;
+        } catch (error) {
+            console.error('Error fetching user tokens:', error);
+            document.getElementById('token-count').textContent = 'Error';
+        }
+    }
+    
+    fetchUserTokens();
+    
     
 });
