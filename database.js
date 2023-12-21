@@ -1,7 +1,8 @@
 const { MongoClient } = require('mongodb');
-const config = require('./dbConfig.json'); // Load configuration from dbConfig.json
+const config = require('./dbConfig.json'); // Adjust the path if necessary
 
-const client = new MongoClient(config.uri, { useNewUrlParser: true, useUnifiedTopology: true });
+const uri = `mongodb+srv://${config.userName}:${config.password}@${config.hostname}`;
+const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 let db;
 
 // Connect to MongoDB
@@ -16,7 +17,6 @@ async function connectDB() {
     }
 }
 
-// Get Database
 function getDB() {
     if (!db) {
         throw new Error("No Database Found!");
@@ -24,28 +24,24 @@ function getDB() {
     return db;
 }
 
-// Example: Add a Document
 async function addDocument(collectionName, document) {
     const collection = db.collection(collectionName);
     const result = await collection.insertOne(document);
     return result.insertedId;
 }
 
-// Example: Find Documents
 async function findDocuments(collectionName, query, options = {}) {
     const collection = db.collection(collectionName);
     const documents = await collection.find(query, options).toArray();
     return documents;
 }
 
-// Example: Update a Document
 async function updateDocument(collectionName, query, update) {
     const collection = db.collection(collectionName);
     const result = await collection.updateOne(query, { $set: update });
     return result.modifiedCount;
 }
 
-// Example: Delete a Document
 async function deleteDocument(collectionName, query) {
     const collection = db.collection(collectionName);
     const result = await collection.deleteOne(query);

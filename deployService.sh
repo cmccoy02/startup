@@ -20,7 +20,7 @@ printf "\n----> Build the distribution package\n"
 rm -rf dist
 mkdir dist
 cp -r public dist
-cp index.js package.json dist/
+cp index.js package.json database.js dbConfig.json dist/
 
 
 # Step 2

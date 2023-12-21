@@ -1,6 +1,6 @@
 const express = require('express');
 const fetch = require('node-fetch');
-const { connectDB } = require('./database'); // Import connectDB from database.js
+const { connectDB } = require('./database.js'); // Import connectDB from database.js
 const app = express();
 const port = 4000;
 
