@@ -1,7 +1,14 @@
 const express = require('express');
 const fetch = require('node-fetch');
+const { connectDB } = require('./database'); // Import connectDB from database.js
 const app = express();
 const port = 4000;
+
+// Establish a connection to MongoDB
+connectDB().catch(error => {
+    console.error('Database connection failed', error);
+    process.exit(1);
+});
 
 app.use(express.static('public'));
 
