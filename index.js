@@ -1,6 +1,6 @@
 const express = require('express');
 const fetch = require('node-fetch');
-const { connectDB, addUser, findUser } = require('./database.js'); // Import necessary functions
+const { connectDB, addUser, findUser } = require('./database.js');
 const bcrypt = require('bcrypt');
 const app = express();
 const port = 4000;
@@ -8,7 +8,23 @@ const port = 4000;
 app.use(express.json()); // To parse JSON request bodies
 app.use(express.static('public'));
 
-// Rest of your existing code...
+// Establish a connection to MongoDB
+connectDB().catch(error => {
+    console.error('Database connection failed', error);
+    process.exit(1);
+});
+
+// Random number API endpoint
+app.get('/api/user-tokens', async (req, res) => {
+    try {
+        const response = await fetch('https://csrng.net/csrng/csrng.php?min=10&max=100');
+        const data = await response.json();
+        const tokens = data[0].random;
+        res.json({ tokens });
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+});
 
 // Endpoint for user registration
 app.post('/register', async (req, res) => {
@@ -17,7 +33,6 @@ app.post('/register', async (req, res) => {
         if (!username || !password) {
             return res.status(400).send('Username and password are required');
         }
-        // Check if user already exists
         const existingUser = await findUser(username);
         if (existingUser) {
             return res.status(409).send('User already exists');
@@ -38,10 +53,8 @@ app.post('/login', async (req, res) => {
         }
         const user = await findUser(username);
         if (user && await bcrypt.compare(password, user.password)) {
-            // Authentication successful
             res.send('Login successful');
         } else {
-            // Authentication failed
             res.status(401).send('Invalid credentials');
         }
     } catch (error) {

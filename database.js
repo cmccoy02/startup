@@ -1,7 +1,8 @@
 const { MongoClient } = require('mongodb');
 const bcrypt = require('bcrypt');
-const config = require('./dbConfig.json'); // Make sure this path is correct
+const config = require('./dbConfig.json'); // Adjust the path as needed
 
+// Constructing the MongoDB URI
 const uri = `mongodb+srv://${config.userName}:${config.password}@${config.hostname}`;
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 let db;
@@ -18,6 +19,7 @@ async function connectDB() {
     }
 }
 
+// Get the database object
 function getDB() {
     if (!db) {
         throw new Error("No Database Found!");
@@ -25,7 +27,7 @@ function getDB() {
     return db;
 }
 
-// Add a new user
+// Add a new user with hashed password
 async function addUser(username, password) {
     const collection = db.collection('users');
     const hashedPassword = await bcrypt.hash(password, 10);
@@ -33,7 +35,7 @@ async function addUser(username, password) {
     return result.insertedId;
 }
 
-// Find a user by username
+// Find a user by their username
 async function findUser(username) {
     const collection = db.collection('users');
     return await collection.findOne({ username });
